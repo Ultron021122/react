@@ -2,17 +2,41 @@ import React from "react";
 import "./App.css";
 import { TwitterFollowCard } from "./TwitterFollowCard";
 
-
 export function App() {
+  const formatUserName = (userName) => `@${userName}`;
+
   return (
-    <React.Fragment>
-        <TwitterFollowCard userName="duckduckgo" name="DuckDuckGo" />
-        <TwitterFollowCard userName="reactjs" name="React" />
-        <TwitterFollowCard userName="Google" name="Google" />
-        <TwitterFollowCard userName="brave" name="Brave Software" />
-        <TwitterFollowCard userName="laravel" name="Laravel" />
-        <TwitterFollowCard userName="marvelsml25" name="Sebastián Martinez López" />
-        <TwitterFollowCard userName="github" name="GitHub" />
-    </React.Fragment>
-  )
+    <section className="App">
+      <TwitterFollowCard
+        formatUserName={formatUserName}
+        userName="duckduckgo"
+        name="DuckDuckGo"
+        isFollowing
+      />
+      <TwitterFollowCard
+        formatUserName={formatUserName}
+        userName="reactjs"
+        name="React"
+        isFollowing={false}
+      />
+      <TwitterFollowCard
+        formatUserName={formatUserName}
+        userName="Google"
+        name="Google"
+        isFollowing
+      />
+      <TwitterFollowCard
+        formatUserName={formatUserName}
+        userName="laravel"
+        name="Laravel"
+        isFollowing={false}
+      />
+      <TwitterFollowCard
+        formatUserName={formatUserName}
+        userName="marvelsml25"
+        name="Sebastián Martinez López"
+        isFollowing
+      />
+    </section>
+  );
 }
